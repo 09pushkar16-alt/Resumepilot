@@ -1,42 +1,43 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ResumePILOT | Your Resume. Refined. Your Future. Elevated.</title>
+<title>ResumePILOT</title>
 
 <style>
+
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:Arial,sans-serif;
 scroll-behavior:smooth;
 }
 
 body{
-font-family:Arial, sans-serif;
-background:#0f0f0f;
+background:#0d0d0d;
 color:white;
 line-height:1.6;
 }
 
 header{
-position:sticky;
+position:fixed;
 top:0;
-background:rgba(15,15,15,0.95);
-padding:18px 8%;
+width:100%;
+background:#111;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-bottom:1px solid #c9a227;
-z-index:100;
+border-bottom:1px solid gold;
+z-index:1000;
 }
 
 .logo{
 font-size:28px;
 font-weight:bold;
-color:#c9a227;
+color:gold;
 }
 
 nav a{
@@ -46,31 +47,34 @@ margin-left:20px;
 }
 
 .hero{
-padding:120px 10%;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
 text-align:center;
+padding:20px;
 }
 
 .hero h1{
-font-size:56px;
-margin-bottom:20px;
-color:#c9a227;
+font-size:65px;
+color:gold;
+margin-bottom:15px;
 }
 
 .hero p{
 font-size:22px;
 max-width:800px;
-margin:auto;
-margin-bottom:35px;
+margin-bottom:30px;
 }
 
 .btn{
-display:inline-block;
-padding:15px 30px;
-background:#c9a227;
+background:gold;
 color:black;
-text-decoration:none;
-font-weight:bold;
+padding:15px 35px;
 border-radius:8px;
+font-weight:bold;
+text-decoration:none;
 transition:0.3s;
 }
 
@@ -79,39 +83,39 @@ transform:translateY(-3px);
 }
 
 section{
-padding:80px 10%;
+padding:100px 10%;
 }
 
 .section-title{
 text-align:center;
-font-size:38px;
-margin-bottom:40px;
-color:#c9a227;
+font-size:40px;
+color:gold;
+margin-bottom:50px;
 }
 
-.cards{
+.grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:25px;
 }
 
 .card{
-background:#181818;
+background:#171717;
 padding:25px;
 border-radius:12px;
 border:1px solid #2b2b2b;
 }
 
 .card h3{
-color:#c9a227;
-margin-bottom:10px;
+color:gold;
+margin-bottom:15px;
 }
 
 .analysis{
+background:#171717;
+padding:30px;
 max-width:700px;
 margin:auto;
-background:#181818;
-padding:30px;
 border-radius:12px;
 }
 
@@ -120,11 +124,11 @@ margin-left:20px;
 margin-top:15px;
 }
 
-.faq-item{
-background:#181818;
+.faq{
+background:#171717;
 padding:20px;
-margin-bottom:15px;
 border-radius:10px;
+margin-bottom:15px;
 }
 
 .contact{
@@ -132,13 +136,13 @@ text-align:center;
 }
 
 footer{
-padding:30px;
 text-align:center;
+padding:30px;
 border-top:1px solid #2b2b2b;
-color:#999;
+color:#aaa;
 }
-</style>
 
+</style>
 </head>
 
 <body>
@@ -149,12 +153,14 @@ color:#999;
 <nav>
 <a href="#how">How It Works</a>
 <a href="#analysis">Analysis</a>
+<a href="#testimonials">Testimonials</a>
 <a href="#faq">FAQ</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
+
 <h1>ResumePILOT</h1>
 
 <p>
@@ -162,147 +168,229 @@ Your Resume. Refined. Your Future. Elevated.
 </p>
 
 <p>
-Upload your resume and receive intelligent insights, ATS optimization suggestions, and professional improvement recommendations.
+AI-powered resume analysis, ATS optimization,
+interview preparation and job readiness insights.
 </p>
 
-<a class="btn" href="https://forms.gle/aiDHk5Uh39p5upQq8" target="_blank">
+<a href="https://forms.gle/aiDHk5Uh39p5upQq8"
+target="_blank"
+class="btn">
 Upload Resume
 </a>
+
 </section>
 
 <section id="how">
+
 <h2 class="section-title">How It Works</h2>
 
-<div class="cards">
+<div class="grid">
 
 <div class="card">
-<h3>1. Upload Resume</h3>
-<p>Submit your resume securely through our portal.</p>
-</div>
-
-<div class="card">
-<h3>2. Analysis</h3>
-<p>ResumePILOT evaluates structure, keywords and ATS readiness.</p>
+<h3>Upload Resume</h3>
+<p>
+Submit your resume through our secure portal.
+</p>
 </div>
 
 <div class="card">
-<h3>3. Recommendations</h3>
-<p>Receive practical suggestions to strengthen your profile.</p>
+<h3>AI Evaluation</h3>
+<p>
+ResumePILOT evaluates structure, keywords,
+formatting and ATS compatibility.
+</p>
+</div>
+
+<div class="card">
+<h3>Get Suggestions</h3>
+<p>
+Receive practical recommendations to improve
+your chances of getting shortlisted.
+</p>
 </div>
 
 </div>
+
 </section>
 
 <section id="analysis">
-<h2 class="section-title">Sample Resume Analysis</h2>
+
+<h2 class="section-title">
+Sample Resume Analysis
+</h2>
 
 <div class="analysis">
 
-<h3>ATS Score: 82 / 100</h3>
+<h3 style="color:gold;">
+ATS Score: 82/100
+</h3>
 
 <ul>
-<li>Strong education section.</li>
-<li>Relevant technical skills listed.</li>
-<li>Add measurable achievements.</li>
-<li>Improve professional summary.</li>
-<li>Use more role-specific keywords.</li>
-<li>Enhance formatting consistency.</li>
+<li>Strong education section</li>
+<li>Good skill presentation</li>
+<li>Add measurable achievements</li>
+<li>Improve professional summary</li>
+<li>Add role-specific keywords</li>
+<li>Improve formatting consistency</li>
 </ul>
 
 </div>
+
 </section>
 
 <section>
-<h2 class="section-title">Why Choose ResumePILOT?</h2>
 
-<div class="cards">
+<h2 class="section-title">
+Why Choose ResumePILOT?
+</h2>
+
+<div class="grid">
 
 <div class="card">
 <h3>ATS Optimization</h3>
-<p>Improve visibility in modern recruitment systems.</p>
+<p>
+Improve compatibility with modern applicant
+tracking systems used by recruiters.
+</p>
 </div>
 
 <div class="card">
-<h3>Professional Feedback</h3>
-<p>Actionable recommendations that help you stand out.</p>
+<h3>Professional Insights</h3>
+<p>
+Receive practical recommendations based on
+industry standards and best practices.
+</p>
 </div>
 
 <div class="card">
-<h3>Career Readiness</h3>
-<p>Build a stronger first impression with recruiters.</p>
+<h3>Interview Readiness</h3>
+<p>
+Identify strengths and weaknesses before
+applying for your dream role.
+</p>
 </div>
 
 </div>
+
 </section>
 
-<section>
-<h2 class="section-title">Testimonials</h2>
+<section id="testimonials">
 
-<div class="cards">
+<h2 class="section-title">
+Testimonials
+</h2>
 
-<div class="card">
-<p>"The recommendations helped me significantly improve my resume."</p>
-<br>
-<strong>- Early User</strong>
-</div>
+<div class="grid">
 
 <div class="card">
-<p>"The ATS insights highlighted issues I had never noticed."</p>
+<p>
+"The suggestions helped me improve my resume
+significantly."
+</p>
 <br>
-<strong>- Beta Tester</strong>
+<strong>— Beta User</strong>
 </div>
 
 <div class="card">
-<p>"Simple, intuitive and extremely useful."</p>
+<p>
+"The ATS recommendations highlighted several
+issues I never noticed."
+</p>
 <br>
-<strong>- Student User</strong>
+<strong>— Early Tester</strong>
+</div>
+
+<div class="card">
+<p>
+"Simple, professional and extremely useful."
+</p>
+<br>
+<strong>— Student User</strong>
 </div>
 
 </div>
+
 </section>
 
 <section id="faq">
-<h2 class="section-title">Frequently Asked Questions</h2>
 
-<div class="faq-item">
-<h3>Is ResumePILOT free?</h3>
-<p>Currently, ResumePILOT is operating in its beta phase.</p>
+<h2 class="section-title">
+Frequently Asked Questions
+</h2>
+
+<div class="faq">
+<h3 style="color:gold;">
+Is ResumePILOT free?
+</h3>
+
+<p>
+Currently ResumePILOT is operating in beta
+phase and early access is available.
+</p>
 </div>
 
-<div class="faq-item">
-<h3>How long does analysis take?</h3>
-<p>Analysis timelines depend on submission volume and review requirements.</p>
+<div class="faq">
+<h3 style="color:gold;">
+How long does analysis take?
+</h3>
+
+<p>
+Analysis timelines depend on submission
+volume and future automation features.
+</p>
 </div>
 
-<div class="faq-item">
-<h3>How can I contact ResumePILOT?</h3>
-<p>Dedicated support channels will be introduced during public launch.</p>
+<div class="faq">
+<h3 style="color:gold;">
+How can I contact ResumePILOT?
+</h3>
+
+<p>
+Dedicated support channels will be introduced
+during public launch.
+</p>
 </div>
 
 </section>
 
 <section id="contact" class="contact">
 
-<h2 class="section-title">Contact Us</h2>
+<h2 class="section-title">
+Contact Us
+</h2>
 
 <p>
-Have questions, feedback, or partnership inquiries?
-</p>
-
-<p>
-Our team is continuously improving ResumePILOT and welcomes your suggestions.
+Have questions, feedback or partnership
+inquiries?
 </p>
 
 <br>
 
-<a class="btn" href="https://forms.gle/aiDHk5Uh39p5upQq8" target="_blank">
+<p>
+Our team is continuously improving
+ResumePILOT and welcomes your suggestions.
+</p>
+
+<br><br>
+
+<a href="https://forms.gle/aiDHk5Uh39p5upQq8"
+target="_blank"
+class="btn">
 Reach Our Team
 </a>
 
 </section>
 
 <footer>
-© 2026 ResumePILOT. All Rights Reserved.
+
+<p>
+© 2026 ResumePILOT
+</p>
+
+<p>
+Your Resume. Refined. Your Future. Elevated.
+</p>
+
 </footer>
 
 </body>
