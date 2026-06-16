@@ -35,49 +35,198 @@
     <nav class="bg-white shadow-md fixed w-full z-50 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-16 items-center">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer" onclick="window.location.reload();">
                     <i class="fa-solid fa-paper-plane text-brand-light text-2xl"></i>
                     <span class="font-bold text-2xl tracking-tight">Resume<span class="text-brand-light">PILOT</span></span>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <a href="#how-it-works" class="text-gray-600 hover:text-brand-light transition">How it Works</a>
-                    <a href="#features" class="text-gray-600 hover:text-brand-light transition">Features</a>
+                    <a href="#pricing" class="text-gray-600 hover:text-brand-light transition">Pricing</a>
                     <a href="#testimonials" class="text-gray-600 hover:text-brand-light transition">Success Stories</a>
                     <a href="#faq" class="text-gray-600 hover:text-brand-light transition">FAQ</a>
+                    <a href="#contact" class="text-gray-600 hover:text-brand-light transition">Contact</a>
                 </div>
                 <div>
-                    <!-- Link 1: Navigation Button -->
-                    <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition shadow-lg">Upload Resume</a>
+                    <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full font-semibold transition shadow-lg">Upload Resume</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero & Upload Section -->
-    <section id="upload-section" class="pt-32 pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center">
-        <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
-            Navigate Your Career with <br/><span class="gradient-text">AI Precision</span>
-        </h1>
-        <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
-            Submit your resume through our secure portal. Our advanced AI will analyze your profile, generate an ATS score, and send actionable tips directly to your inbox to help you land your dream job.
-        </p>
+    <!-- Main Upload & Results Area -->
+    <section class="pt-32 pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto text-center min-h-[60vh] flex flex-col justify-center">
+        
+        <!-- INITIAL HERO CONTENT -->
+        <div id="hero-content" class="transition-all duration-500">
+            <h1 class="text-5xl md:text-6xl font-extrabold mb-6">
+                Navigate Your Career with <br/><span class="gradient-text">AI Precision</span>
+            </h1>
+            <p class="text-lg text-gray-600 mb-10 max-w-2xl mx-auto">
+                Submit your resume through our secure portal. Our advanced AI scans your layout, scores your credentials against competitive ATS systems, and launches your job search.
+            </p>
 
-        <!-- CTA Box -->
-        <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
-            <i class="fa-solid fa-file-pdf text-6xl text-brand-light mb-6"></i>
-            <h3 class="text-2xl font-bold mb-4">Ready to boost your interview chances?</h3>
-            <p class="text-gray-500 mb-8">Click below to access our secure submission form. Supported formats: PDF, DOCX.</p>
+            <div class="max-w-xl mx-auto bg-white rounded-2xl shadow-xl p-10 border border-gray-100">
+                <i class="fa-solid fa-file-invoice text-6xl text-brand-light mb-6"></i>
+                <h3 class="text-2xl font-bold mb-4">Ready to optimize your resume?</h3>
+                <p class="text-gray-500 mb-8">Select a package from our options below to access our secure Google Form submission dashboard.</p>
+                
+                <a href="#pricing" class="inline-block w-full bg-gray-800 text-white text-lg px-8 py-4 rounded-xl font-bold hover:bg-gray-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-1">
+                    Explore Plans & Upload <i class="fa-solid fa-arrow-down ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- LOADING STATE -->
+        <div id="loading-state" class="hidden py-20 flex flex-col items-center justify-center">
+            <div class="relative w-24 h-24 mb-8">
+                <div class="absolute inset-0 border-4 border-gray-100 rounded-full"></div>
+                <div class="absolute inset-0 border-4 border-brand-light rounded-full border-t-transparent animate-spin"></div>
+                <i class="fa-solid fa-robot absolute inset-0 flex items-center justify-center text-3xl text-gray-400"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">Awaiting Portal Response...</h3>
+            <p class="text-gray-500 max-w-md mx-auto">Please select your plan and upload your resume in the secure Google Form tab. Your interactive score preview will display right here afterward.</p>
+        </div>
+
+        <!-- MOCK RESULTS DASHBOARD -->
+        <div id="results-section" class="hidden max-w-5xl mx-auto w-full text-left">
+            <div class="text-center mb-8">
+                <span class="bg-green-100 text-green-700 px-4 py-1 rounded-full text-sm font-bold tracking-wide uppercase"><i class="fa-solid fa-check-circle mr-1"></i> Form Action Logged</span>
+                <h2 class="text-3xl font-bold mt-4">Your Resume Report Preview</h2>
+            </div>
             
-            <!-- Link 2: Main Call to Action Button -->
-            <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" class="inline-block w-full bg-gray-800 text-white text-lg px-8 py-4 rounded-xl font-bold hover:bg-gray-900 transition shadow-md hover:shadow-lg transform hover:-translate-y-1">
-                Proceed to Secure Upload <i class="fa-solid fa-arrow-right ml-2"></i>
-            </a>
-            <p class="text-xs text-gray-400 mt-4"><i class="fa-solid fa-lock"></i> Your data is processed securely.</p>
+            <div class="bg-white rounded-2xl shadow-2xl overflow-hidden border-t-4 border-brand-light">
+                <div class="p-8 md:p-12 flex flex-col md:flex-row gap-10">
+                    <div class="md:w-1/3 flex flex-col items-center justify-center text-center border-b md:border-b-0 md:border-r border-gray-200 pb-8 md:pb-0 md:pr-8">
+                        <h3 class="text-xl font-bold text-gray-700 mb-4">Sample ATS Score</h3>
+                        <div class="relative w-40 h-40 flex items-center justify-center rounded-full border-8 border-brand-light bg-blue-50 shadow-inner">
+                            <span class="text-5xl font-extrabold text-gray-800">72<span class="text-2xl">%</span></span>
+                        </div>
+                        <p class="mt-4 text-sm font-semibold text-orange-500"><i class="fa-solid fa-triangle-exclamation"></i> Optimization Recommended</p>
+                    </div>
+                    
+                    <div class="md:w-2/3">
+                        <h3 class="text-2xl font-bold mb-6">AI Feedback & Tips</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4 p-4 bg-red-50 rounded-lg border border-red-100">
+                                <i class="fa-solid fa-xmark text-red-500 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Missing Action Verbs</h4>
+                                    <p class="text-sm text-gray-600">Passive summaries found. Switch expressions like "responsible for managing" to powerful verbs like "Spearheaded," "Engineered," or "Optimized."</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4 p-4 bg-yellow-50 rounded-lg border border-yellow-100">
+                                <i class="fa-solid fa-minus text-yellow-500 mt-1 text-xl"></i>
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Formatting Inconsistencies</h4>
+                                    <p class="text-sm text-gray-600">The layout structures and date alignments are uneven. Standard parser rules require clean vertical margins.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-6 italic">* Note: This is an architectural site demo. Your precise evaluation report containing your custom layout criteria will follow via email depending on your selected tier features.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW REVENUE MODEL PRICING SECTION -->
+    <section id="pricing" class="py-20 bg-gray-100 border-t border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-extrabold text-gray-900 mb-4">Flexible, Transparent Pricing</h2>
+            <p class="text-lg text-gray-600 mb-16 max-w-2xl mx-auto">Choose the perfect tier to supercharge your hiring potential. From rapid automated processing to high-touch industry mentoring.</p>
+
+            <!-- Main Tier Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+                
+                <!-- Basic ATS Plan -->
+                <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-200 flex flex-col justify-between relative hover:shadow-xl transition">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Basic ATS Review</h3>
+                        <p class="text-sm text-gray-500 mb-6">Perfect for rapid validation checks.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-gray-900">₹99</span>
+                            <span class="text-gray-500 text-sm">/ single scan</span>
+                        </div>
+                        <ul class="text-left space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Automated Report Generation</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Core System Score Matrix</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Basic Keyword Matching</li>
+                        </ul>
+                    </div>
+                    <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="mt-8 block w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 rounded-xl text-center transition">Choose Basic</a>
+                </div>
+
+                <!-- Premium Review Plan (Highlighted) -->
+                <div class="bg-white rounded-2xl shadow-xl p-8 border-2 border-blue-500 flex flex-col justify-between relative hover:shadow-2xl transition transform md:-translate-y-4">
+                    <span class="absolute top-0 right-1/2 transform translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Most Popular</span>
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Premium Review</h3>
+                        <p class="text-sm text-gray-500 mb-6">Deep hybrid insights from professional reviewers.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-gray-900">₹499</span>
+                            <span class="text-gray-500 text-sm">/ profile</span>
+                        </div>
+                        <ul class="text-left space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6">
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> <strong>AI + Human Expert Review</strong></li>
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Comprehensive Layout Check</li>
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Targeted Industry Keywords</li>
+                            <li><i class="fa-solid fa-check text-blue-500 mr-2"></i> Priority Email Support</li>
+                        </ul>
+                    </div>
+                    <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="mt-8 block w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-xl text-center transition shadow-md">Get Premium</a>
+                </div>
+
+                <!-- Subscription Plan -->
+                <div class="bg-white rounded-2xl shadow-md p-8 border border-gray-200 flex flex-col justify-between relative hover:shadow-xl transition">
+                    <div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Subscription Model</h3>
+                        <p class="text-sm text-gray-500 mb-6">Continuous career tracking updates.</p>
+                        <div class="mb-6">
+                            <span class="text-4xl font-extrabold text-gray-900">₹299</span>
+                            <span class="text-gray-500 text-sm">/ month</span>
+                        </div>
+                        <ul class="text-left space-y-3 text-sm text-gray-600 border-t border-gray-100 pt-6">
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> <strong>Unlimited Analyses</strong></li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Dynamic Job Tracking Hub</li>
+                            <li><i class="fa-solid fa-check text-green-500 mr-2"></i> Routine Metric Updates</li>
+                        </ul>
+                    </div>
+                    <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="mt-8 block w-full bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 rounded-xl text-center transition">Subscribe Now</a>
+                </div>
+
+            </div>
+
+            <!-- Premium Add-On Services -->
+            <h3 class="text-2xl font-bold text-gray-800 mb-8">Specialized Add-On Flight Packages</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                
+                <!-- Rewriting Service -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-left flex gap-4 items-start">
+                    <div class="bg-blue-50 p-3 rounded-lg text-blue-600"><i class="fa-solid fa-pen-nib text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-900">Resume Rewriting Service</h4>
+                        <p class="text-sm text-gray-500 mt-1 mb-3">Our elite technical writers remake your CV structure scratch-built for peak corporate placement value.</p>
+                        <span class="text-lg font-extrabold text-blue-600">₹999 - ₹1,999</span>
+                        <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="block mt-3 text-xs font-bold text-blue-600 hover:underline">Book Custom Rewrite &rarr;</a>
+                    </div>
+                </div>
+
+                <!-- Interview Prep Service -->
+                <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-200 text-left flex gap-4 items-start">
+                    <div class="bg-purple-50 p-3 rounded-lg text-purple-600"><i class="fa-solid fa-user-tie text-xl"></i></div>
+                    <div>
+                        <h4 class="font-bold text-lg text-gray-900">Interview Preparation Package</h4>
+                        <p class="text-sm text-gray-500 mt-1 mb-3">Mock structural interview routines, behavioral phrasing strategy formulas, and confident presentation checklists.</p>
+                        <span class="text-lg font-extrabold text-purple-600">₹499 - ₹1,499</span>
+                        <a href="https://forms.gle/8ot5JRSdiPYWXKHp8" target="_blank" rel="noopener noreferrer" onclick="startFakeAnalysis()" class="block mt-3 text-xs font-bold text-purple-600 hover:underline">Enlist in Prep Package &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-20 bg-white mt-10">
+    <section id="features" class="py-20 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 class="text-3xl font-bold mb-12">Why Choose ResumePILOT?</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -100,7 +249,7 @@
                         <i class="fa-solid fa-bullseye text-brand-light text-2xl"></i>
                     </div>
                     <h3 class="text-xl font-bold mb-2">Industry-Specific Tips</h3>
-                    <p class="text-gray-600 text-sm">Tailored advice whether you are applying for corporate finance, creative arts, or specialized electrical engineering roles.</p>
+                    <p class="text-gray-600 text-sm">Tailored advice whether you are applying for corporate finance, creative arts, or specialized engineering roles.</p>
                 </div>
             </div>
         </div>
@@ -143,51 +292,85 @@
             <h2 class="text-3xl font-bold text-center mb-10">Frequently Asked Questions</h2>
             <div class="space-y-4">
                 <div class="border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-gray-800">How do I submit my resume?</h3>
-                    <p class="text-gray-600 text-sm mt-2">Simply click the "Proceed to Secure Upload" button on our homepage. You will be redirected to a secure Google Form where you can attach your PDF or DOCX file.</p>
+                    <h3 class="font-bold text-lg text-gray-800">How do I choose a tier option?</h3>
+                    <p class="text-gray-600 text-sm mt-2">Simply click your chosen plan button above. Our secure Google Form portal collects your chosen tier classification along with your document file layout simultaneously.</p>
                 </div>
                 <div class="border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-gray-800">How long does it take to get my ATS score?</h3>
-                    <p class="text-gray-600 text-sm mt-2">Once you submit your resume through our portal, our AI goes to work. You will receive a detailed PDF report in your email inbox shortly after submission.</p>
+                    <h3 class="font-bold text-lg text-gray-800">What is the delivery window for Premium Human evaluations?</h3>
+                    <p class="text-gray-600 text-sm mt-2">While automated Basic scores deliver layout diagnostics instantaneously, hybrid AI + Human expert reviews deliver custom manual deep-dives directly to your email inside 24-48 hours.</p>
                 </div>
                 <div class="border border-gray-200 rounded-lg p-5">
-                    <h3 class="font-bold text-lg text-gray-800">Is ResumePILOT free for students?</h3>
-                    <p class="text-gray-600 text-sm mt-2">Yes! We offer a completely free tier that allows up to 3 resume scans per month, perfectly designed to support students and new graduates.</p>
+                    <h3 class="font-bold text-lg text-gray-800">Can I cancel my monthly tracking plan anytime?</h3>
+                    <p class="text-gray-600 text-sm mt-2">Yes, our monthly subscription models run with absolute freedom. You can pause or stop your subscription tier right from your user settings without any hidden penal fees.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer & Contact -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <!-- Footer & Contact Support Section -->
+    <footer id="contact" class="bg-gray-900 text-gray-300 py-12 border-t-4 border-brand-light">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-10">
+            <!-- Brand Info -->
             <div>
                 <div class="flex items-center gap-2 mb-4">
-                    <i class="fa-solid fa-paper-plane text-brand-light text-xl"></i>
-                    <span class="font-bold text-xl text-white">ResumePILOT</span>
+                    <i class="fa-solid fa-paper-plane text-brand-light text-2xl"></i>
+                    <span class="font-bold text-2xl text-white">Resume<span class="text-brand-light">PILOT</span></span>
                 </div>
                 <p class="text-sm text-gray-400">Guiding your career trajectory with precision AI analysis. Build better resumes, pass the ATS, and get hired.</p>
             </div>
+            
+            <!-- Quick Links -->
             <div>
-                <h4 class="font-bold text-white mb-4">Quick Links</h4>
-                <ul class="space-y-2 text-sm">
-                    <li><a href="#" class="hover:text-brand-light">About Us</a></li>
-                    <li><a href="#" class="hover:text-brand-light">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-brand-light">Terms of Service</a></li>
+                <h4 class="font-bold text-white text-lg mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-sm text-gray-400">
+                    <li><a href="#features" class="hover:text-brand-light transition">Why Choose Us</a></li>
+                    <li><a href="#pricing" class="hover:text-brand-light transition">Plans & Pricing</a></li>
+                    <li><a href="#testimonials" class="hover:text-brand-light transition">Success Stories</a></li>
+                    <li><a href="#faq" class="hover:text-brand-light transition">Help & FAQ</a></li>
                 </ul>
             </div>
+            
+            <!-- Contact Support (NEW) -->
             <div>
-                <h4 class="font-bold text-white mb-4">Contact Us</h4>
-                <form class="flex flex-col gap-3">
-                    <input type="email" placeholder="Your Email Address" class="bg-gray-800 border border-gray-700 p-2 rounded text-sm text-white focus:outline-none focus:border-brand-light" required>
-                    <textarea placeholder="How can we help?" class="bg-gray-800 border border-gray-700 p-2 rounded text-sm text-white focus:outline-none focus:border-brand-light h-20" required></textarea>
-                    <button type="submit" class="bg-brand-dark text-white font-bold py-2 rounded hover:bg-brand-light transition">Send Message</button>
-                </form>
+                <h4 class="font-bold text-white text-lg mb-4">Need Help? Contact Support</h4>
+                <p class="text-sm text-gray-400 mb-5">Have questions about your resume report, pricing plans, or premium rewriting services? Reach out to our team directly.</p>
+                
+                <div class="flex items-center gap-4 bg-gray-800 p-4 rounded-xl border border-gray-700 hover:border-brand-light transition">
+                    <div class="w-10 h-10 bg-gray-900 rounded-full flex items-center justify-center text-brand-light shadow-inner">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 font-semibold uppercase tracking-wider mb-1">Email Us At</p>
+                        <a href="mailto:resumepilot.co@gmail.com" class="text-white hover:text-brand-light font-bold transition text-sm md:text-base">
+                            resumepilot.co@gmail.com
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="border-t border-gray-800 mt-10 pt-6 text-center text-xs text-gray-500">
+        
+        <!-- Copyright -->
+        <div class="border-t border-gray-800 mt-12 pt-6 text-center text-sm text-gray-500">
             &copy; 2026 ResumePILOT Startup. All Rights Reserved.
         </div>
     </footer>
+
+    <!-- Script Functions -->
+    <script>
+        function startFakeAnalysis() {
+            const heroContent = document.getElementById('hero-content');
+            const loadingState = document.getElementById('loading-state');
+            const resultsSection = document.getElementById('results-section');
+
+            heroContent.classList.add('hidden');
+            loadingState.classList.remove('hidden');
+
+            setTimeout(() => {
+                loadingState.classList.add('hidden');
+                resultsSection.classList.remove('hidden');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 8000);
+        }
+    </script>
 </body>
 </html>
