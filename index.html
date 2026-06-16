@@ -16,16 +16,15 @@ scroll-behavior:smooth;
 }
 
 body{
-background:#0d0d0d;
-color:white;
-line-height:1.6;
+background:#f8f8f8;
+color:#222;
 }
 
 header{
 position:fixed;
 top:0;
 width:100%;
-background:#111;
+background:white;
 padding:20px 8%;
 display:flex;
 justify-content:space-between;
@@ -41,33 +40,13 @@ color:gold;
 }
 
 nav a{
-color:white;
-text-decoration:none;
-margin-left:20px;
-}
-
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-}
+color:#222;
+font-weight:bold;
 
 .hero h1{
-font-size:65px;
-color:gold;
-margin-bottom:15px;
+color:#b8860b;
+font-size:72px;
 }
-
-.hero p{
-font-size:22px;
-max-width:800px;
-margin-bottom:30px;
-}
-
 .btn{
 background:gold;
 color:black;
@@ -78,6 +57,32 @@ text-decoration:none;
 transition:0.3s;
 }
 
+  <section>
+
+<h2 class="section-title">
+Our Impact
+</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>500+</h3>
+<p>Resumes Reviewed</p>
+</div>
+
+<div class="card">
+<h3>85%</h3>
+<p>Average ATS Improvement</p>
+</div>
+
+<div class="card">
+<h3>24 Hours</h3>
+<p>Average Response Time</p>
+</div>
+
+</div>
+
+</section>
 .btn:hover{
 transform:translateY(-3px);
 }
@@ -100,7 +105,8 @@ gap:25px;
 }
 
 .card{
-background:#171717;
+background:white;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
 padding:25px;
 border-radius:12px;
 border:1px solid #2b2b2b;
